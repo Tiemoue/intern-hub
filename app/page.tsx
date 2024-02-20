@@ -19,7 +19,7 @@ export default function Home() {
               provide a platform for students to find internships and for companies
               to find interns.
             </p>
-            <Link className="btn btn-wide btn-primary m-5 sm:btn-sm md:btn-md " href="/loginPage">Lets Get Started</Link>
+            <Link className="btn btn-wide m-5 sm:btn-sm md:btn-md bg-teal-600 hover:bg-teal-700 text-gray-50" href="/login">Lets Get Started</Link>
           </div>
           <div className="md:w-2/3">
             <HomeImg></HomeImg>

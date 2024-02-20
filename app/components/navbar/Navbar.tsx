@@ -1,4 +1,6 @@
 import React from 'react'
+import { MdOutlineWork } from "react-icons/md";
+import Link from 'next/link';
 
 const Navbar = () => {
     return (
@@ -17,19 +19,20 @@ const Navbar = () => {
                             <li><a>More</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Intern Hub</a>
+                    <Link href="/" className="btn btn-ghost text-xl">Intern Hub<span style={{ color: '#fa7d5d' }}> <MdOutlineWork />  </span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg">
                         <li><a>About</a></li>
                         <li>
-                           <a>Contact Us</a>
+                            <a>Contact Us</a>
                         </li>
                         <li><a>More</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                <a className="btn btn-outline btn-primary">Sign Up</a>
+                    <Link href="/login" className="btn mr-2 border border-gray-400">Log in</Link>
+                    <Link href="/signup" className="btn mr-2 bg-teal-500 hover:bg-teal-700">Sign up</Link>
                 </div>
             </div>
         </>
