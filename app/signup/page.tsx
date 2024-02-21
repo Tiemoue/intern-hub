@@ -97,7 +97,7 @@ const page = () => {
                                     </p>
                                 </div>
 
-                                <button className="btn btn-md  bg-teal-600 hover:bg-teal-700 w-full mt-4  text-gray-50">Register</button>
+                                <Link href='/location' className="btn btn-md  bg-teal-600 hover:bg-teal-700 w-full mt-4  text-gray-50">Register</Link>
 
                                 <div className="text-sm m-2">
                                     Already have an account?
