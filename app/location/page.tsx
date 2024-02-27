@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
+
 
 const page = () => {
     const locations = [
@@ -10,7 +12,7 @@ const page = () => {
         "Washington D.C."
     ];
 
-    const [selectedLocations , setSelectedLocations] = useState<String[]>([]);
+    const [selectedLocations, setSelectedLocations] = useState<String[]>([]);
 
     const handleLocationChange = (location: string) => {
         if (selectedLocations.includes(location)) {
@@ -31,32 +33,38 @@ const page = () => {
     const isAllSelected = locations.length === selectedLocations.length;
 
     return (
-        <div className="container mx-auto my-8 p-4">
-            <h1 className="text-xl font-semibold mb-4">Select Your Preferred Locations</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {locations.map((location, index) => (
-                    <label key={index} className="flex items-center space-x-3">
-                        <input
-                            type="checkbox"
-                            className=''
-                            checked={selectedLocations.includes(location)}
-                            onChange={() => handleLocationChange(location)}
-                        />
-                        <span>{location}</span>
-                    </label>
-                ))}
-                <label className="flex items-center space-x-3">
-                    <input
-                        type="checkbox"
-                        checked={isAllSelected}
-                        onChange={handleSelectAll}
-                    />
-                    <span>Select All</span>
-                </label>
+        <>
+            <div className="container mx-auto my-8 p-4">
+                <h1 className="text-2xl font-semibold mb-4 text-center">Select Your Preferred Locations</h1>
+                <div className='mt-20'>
+                    <h2 className="text-lg font-semibold mb-2">Where would you like to work?</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {locations.map((location, index) => (
+                            <label key={index} className="flex items-center space-x-3">
+                                <input
+                                    type="checkbox"
+                                    className=''
+                                    checked={selectedLocations.includes(location)}
+                                    onChange={() => handleLocationChange(location)}
+                                />
+                                <span>{location}</span>
+                            </label>
+                        ))}
+                        <label className="flex items-center space-x-3">
+                            <input
+                                type="checkbox"
+                                checked={isAllSelected}
+                                onChange={handleSelectAll}
+                            />
+                            <span>Select All</span>
+                        </label>
+                    </div>
+                    <div className='mt-5' >
+                        <Link href="/skill" className="mt-4 px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700" onClick={() => console.log(selectedLocations)}> Save and Continue</Link>
+                    </div>
+                </div>
             </div>
-            <button className="mt-4 px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700" onClick={() => console.log(selectedLocations)}> Save and Continue</button>
-        </div>
-
+        </>
     );
 };
 
