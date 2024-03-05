@@ -31,7 +31,7 @@ const Page = () => {
                     </div>
                 </div>
                 <div className='flex justify-center items-center'>
-                <Link href="/job" className="btn px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">Finish</Link>
+                <Link href="/dashboard" className="btn px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">Finish</Link>
                 </div>
             </div>
           
