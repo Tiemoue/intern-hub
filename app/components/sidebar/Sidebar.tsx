@@ -4,9 +4,17 @@ import { MdKeyboardDoubleArrowRight, MdFavoriteBorder, MdOutlineHome, MdOutlineW
 import { TbClockShare } from "react-icons/tb";
 import Link from 'next/link';
 
+
 const Sidebar = ({ props }: { props: string }) => {
-    
-    const [isOpen, setIsOpen] = useState(() => JSON.parse(localStorage.getItem('sidebarOpen') || 'false'));
+
+    const [isOpen, setIsOpen] =  useState(() => {
+        if (typeof window !== 'undefined') {
+          const storedValue = localStorage.getItem('sidebarOpen');
+          return storedValue ? JSON.parse(storedValue) : false;
+        }
+        return false;
+      });
+      
     const [selectedPage, setSelectedPage] = useState(props);
 
     useEffect(() => {
@@ -22,6 +30,7 @@ const Sidebar = ({ props }: { props: string }) => {
     };
 
     return (
+
         <div className={`flex flex-col ${isOpen ? 'w-60' : 'w-20'} h-full bg-gray-800 transition-all duration-300 ease-in-out`}>
 
             <div className="flex items-center justify-center h-20">
@@ -33,9 +42,9 @@ const Sidebar = ({ props }: { props: string }) => {
 
             <ul className="flex flex-col items-center flex-1">
                 {[
-                    { name: 'Dashboard', icon: MdOutlineHome, value: 'dashboard'},
-                    { name: 'Matches', icon: MdFavoriteBorder, value: 'matches'},
-                    { name: 'Tracker', icon: TbClockShare, value: 'tracker'},
+                    { name: 'Dashboard', icon: MdOutlineHome, value: 'dashboard' },
+                    { name: 'Matches', icon: MdFavoriteBorder, value: 'matches' },
+                    { name: 'Tracker', icon: TbClockShare, value: 'tracker' },
                     { name: 'Profile', icon: MdPersonOutline, value: 'profile' }, // Replaced PiUserCircle for demonstration
                 ].map(({ name, icon: Icon, value }) => (
                     <Link href={`/${value}`} key={name}>
