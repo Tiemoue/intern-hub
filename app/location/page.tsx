@@ -36,7 +36,7 @@ const page = () => {
     return (
         <>
         <SignUpNavBar />
-            <div className='mx-40'>
+            <div className='mx-auto max-w-4xl'>
                 <Progressbar prog={25} />
             </div>
             <div className="container mx-auto my-4 p-4">

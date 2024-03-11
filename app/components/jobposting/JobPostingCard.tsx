@@ -26,7 +26,7 @@ const JobPostingCard = ({
 
   return (
     <div className="flex flex-col w-full items-center justify-between p-4">
-      <div className="card w-80 max-w-md bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-2">
+      <div className="card w-80 max-w-md bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transition duration-300 ease-in-out hover:shadow-lg">
         <div className="flex items-center space-x-4 p-4">
           <img
             src={`https://logo.clearbit.com/${companyName.toLowerCase()}.com?size=70`}
@@ -43,20 +43,26 @@ const JobPostingCard = ({
             <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full text-white ${jobType === 'Intern' ? 'bg-blue-500' : 'bg-green-500'}`}>
               {jobType}
             </span>
-            <span onClick={toggleExpanded} className="cursor-pointer transition-transform duration-200 transform" aria-label="Expand details">
-              <span className={`${isExpanded ? 'transform rotate-180' : ''} text-xl`}><MdExpandMore /></span>
+            <span onClick={toggleExpanded} className="cursor-pointer transition-transform duration-200 transform hover:text-gray-500" aria-label="Expand details">
+              <span className={`${isExpanded ? 'rotate-180' : ''} text-xl`}> <MdExpandMore /> </span>
             </span>
           </div>
         </div>
 
         {isExpanded && (
-          <div className="p-4">
-            <ul className="text-sm">
-              <li><strong>Field(s):</strong> {fields}</li>
-              <li><strong>Experience Level(s):</strong> {experienceLevels}</li>
-              <li><strong>Location(s):</strong> {locations}</li>
-              <li><strong>Posted:</strong> {postedDate}</li>
-            </ul>
+          <div className="p-4 text-sm space-y-2">
+            <p><strong>Field(s):</strong> {fields}</p>
+            <p><strong>Experience Level(s):</strong> {experienceLevels}</p>
+            <p><strong>Location(s):</strong> {locations}</p>
+            <p><strong>Posted:</strong> {postedDate}</p>
+            <div className="flex justify-between mt-4 pt-3 border-t border-gray-200">
+              <button
+                onClick={() => console.log("Applying to", companyName)}
+                className="flex-1 mr-2 rounded-lg hover:bg-slate-100 py-2">Apply Now</button>
+              <button
+                onClick={() => console.log("Saved", companyName, "for later")}
+                className="flex-1 ml-2 rounded-lg hover:bg-slate-100 py-2">Save for Later</button>
+            </div>
           </div>
         )}
       </div>
