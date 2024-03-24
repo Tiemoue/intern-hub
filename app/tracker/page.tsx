@@ -34,7 +34,6 @@ const initialApplications: JobApplication[] = [
   { id: 18, companyName: 'Salesforce', jobTitle: 'Software Engineer', status: 'Interested', location: 'San Francisco, CA' },
   { id: 19, companyName: 'Oracle', jobTitle: 'Data Scientist', status: 'Applied', location: 'Redwood City, CA' },
   { id: 20, companyName: 'IBM', jobTitle: 'Product Manager', status: 'Interested', location: 'San Jose, CA' },
-  // Add more applications as needed
 ];
 const Page = () => {
   const [applications, setApplications] = useState<JobApplication[]>(initialApplications);

@@ -40,14 +40,7 @@ const page = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredJobs.map((job, index) => (
               <div key={index} className="m-4 min-w-max">
-                <JobPostingCard
-                  companyName={job.companyName}
-                  jobTitle={job.jobTitle}
-                  fields={job.fields}
-                  experienceLevels={job.experienceLevels}
-                  locations={job.locations}
-                  postedDate={job.postedDate}
-                  jobType={job.jobType}
+                <JobPostingCard {...job}
                 />
               </div>
             ))}
