@@ -2,7 +2,7 @@
 import JobPostingCard from "../components/jobposting/JobPostingCard";
 import Sidebar from "../components/sidebar/Sidebar";
 import { AiOutlineFolderOpen } from "react-icons/ai";
-import { jobPostings } from "./jobs";
+import { jobPostings } from "../data/fakeJobs";
 import Link from "next/link";
 
 export default function page() {

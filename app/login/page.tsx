@@ -54,7 +54,7 @@ const page = () => {
 
                                 <div className="flex w-full justify-between items-center">
                                     <a href="#" className="text-blue-600 text-sm hover:underline">Forgot your password?</a>
-                                    <button className="btn  bg-teal-600 hover:bg-teal-700 btn-md text-gray-50">Sign In</button>
+                                    <Link href="/dashboard" className="btn bg-teal-600 hover:bg-teal-700 btn-md text-gray-50">Sign In</Link>
                                 </div>
 
                                 <div className="text-sm">

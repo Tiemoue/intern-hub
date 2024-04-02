@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import { jobPostings } from "../dashboard/jobs";
+import { jobPostings } from "../data/fakeJobs";
 import { useState } from 'react';
 import JobPostingCard from "../components/jobposting/JobPostingCard";
 import Sidebar from '../components/sidebar/Sidebar';
